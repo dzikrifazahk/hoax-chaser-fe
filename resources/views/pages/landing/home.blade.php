@@ -90,14 +90,16 @@
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Encouraging Community Collaboration</h5>
                         </a>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Encourage collaboration between users to report hoaxes, share resources, and build a strong network in the fight against disinformation.</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Encourage collaboration between users
+                            to report hoaxes, share resources, and build a strong network in the fight against
+                            disinformation.</p>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-    <div class="w-full h-full mt-28 flex flex-col">
+    <div class="w-full h-auto mt-28 flex flex-col">
         <p class="text-center text-4xl font-bold">OUR PRODUCTS</p>
         <div class="flex w-full h-1/2">
             <div class="flex flex-col w-full p-5">
@@ -118,6 +120,33 @@
                     <img src="img/web.png" alt="" class="pt-3">
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="w-full h-28 flex flex-col bg-[#C0244F] p-5">
+        <div class="w-full h-full flex">
+            <div class="w-full h-full items-center justify-center flex">
+                <p class="text-center text-4xl text-white font-bold">Try Our Products Here!</p>
+            </div>
+            <div class="flex w-full justify-end gap-5">
+                <img src="/img/appstore.png" alt="">
+                <img src="/img/playstore.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="flex w-full h-1/2 p-10">
+        <div class="flex flex-col gap-5 w-full">
+            <p class="text-3xl font-bold">Contact</p>
+            <p class="text-3xl text-[#7E7E7E]">Hoax Chaser Office</p>
+            <p class="">Jl. Lohbener Lama No.08, Legok, Kec. Lohbener, Kabupaten Indramayu, Jawa Barat 45252</p>
+            <br>
+            <p class="">No. Handphone : 089639490563</p>
+            <p class="">Email : dzikrifaza15@gmail.com</p>
+        </div>
+        <div class="flex items-center justify-center m-5 w-full">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2230.9931806880713!2d108.28019946668049!3d-6.407907677069956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6eb87d1fcaf97d%3A0x4fc15b3c8407ada4!2sIndramayu%20State%20Polytechnic!5e0!3m2!1sen!2sid!4v1719862096451!5m2!1sen!2sid"
+                width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 @endsection
