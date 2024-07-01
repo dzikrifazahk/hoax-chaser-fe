@@ -14,11 +14,15 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::redirect('/', '/dashboard-general-dashboard');
+Route::redirect('/', '/');
 
 // Dashboard
 Route::get('/dashboard-general-dashboard', function () {
     return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
+});
+
+Route::get('/', function () {
+    return view('pages.landing.index', []);
 });
 
 Route::get('/anu', [TestController::class,'index']);
