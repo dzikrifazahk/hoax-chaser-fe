@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingCommunity;
 use App\Http\Controllers\LandingReadMode;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,10 @@ Route::prefix('/community')->group(function () {
     Route::post('/getDataById/{id}', [LandingCommunity::class, 'getDataById'])->name('community.getDataById');
     Route::post('/createOrUpdate', [LandingCommunity::class, 'createOrUpdate'])->name('community.createOrUpdate');
     Route::post('/delete/{id}', [LandingCommunity::class, 'delete'])->name('community.delete');
+});
+
+Route::prefix('/admin')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 });
 
 // Route::get('/read-mode', function () {
