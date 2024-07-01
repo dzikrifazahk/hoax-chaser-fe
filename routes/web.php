@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LandingReadMode;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 
@@ -24,6 +25,25 @@ Route::get('/dashboard-general-dashboard', function () {
 Route::get('/', function () {
     return view('pages.landing.index', []);
 });
+
+// Route::get('/read-mode', [LandingReadMode::class, 'index'])->name('readMode');
+Route::get('/read-mode', function () {
+    return view('pages.landing.read-mode', []);
+})->name('readMode');
+Route::get('/check-by-ai', function () {
+    return view('pages.landing.read-mode', []);
+})->name('checkByAI');
+Route::get('/community', function () {
+    return view('pages.landing.community', []);
+})->name('community');
+
+// Route::get('/read-mode', function () {
+//     return view('pages.landing.read-mode', []);
+// });
+// Route::get('/read-mode', [LandingReadMode::class, 'index'])->name('readMode');
+// Route::get('/check-by-ai', [CheckByAIController::class, 'index'])->name('checkByAI');
+// Route::get('/community', [CommunityController::class, 'index'])->name('community');
+
 
 Route::get('/anu', [TestController::class,'index']);
 
