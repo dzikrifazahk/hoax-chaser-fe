@@ -40,6 +40,7 @@ Route::prefix('/community')->group(function () {
     Route::get('/', [LandingCommunity::class, 'index'])->name('community');
     Route::post('/getDataById/{id}', [LandingCommunity::class, 'getDataById'])->name('community.getDataById');
     Route::post('/createOrUpdate', [LandingCommunity::class, 'createOrUpdate'])->name('community.createOrUpdate');
+    Route::post('/delete/{id}', [LandingCommunity::class, 'delete'])->name('community.delete');
 });
 
 // Route::get('/read-mode', function () {

@@ -56,4 +56,15 @@ class LandingCommunity extends Controller
             return redirect()->back()->with('error', 'Data has not been retrieved');
         }
     }
+
+    function delete($id)
+    {
+        $response = getData('/community/' . $id);
+
+        if ($response) {
+            return redirect()->back()->with('success', 'Data has been retrieved');
+        } else {
+            return redirect()->back()->with('error', 'Data has not been retrieved');
+        }
+    }
 }
