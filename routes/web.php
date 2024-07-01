@@ -26,7 +26,7 @@ Route::get('/dashboard-general-dashboard', function () {
 });
 
 Route::get('/', function () {
-    return view('pages.landing.index', []);
+    return view('pages.landing.home', []);
 });
 
 // Route::get('/read-mode', [LandingReadMode::class, 'index'])->name('readMode');
