@@ -41,15 +41,17 @@ Route::get('/check-by-ai', function () {
 
 Route::prefix('/community')->group(function () {
     Route::get('/', [LandingCommunity::class, 'index'])->name('community');
-    Route::post('/getDataById/{id}', [LandingCommunity::class, 'getDataById'])->name('community.getDataById');
-    Route::post('/createOrUpdate', [LandingCommunity::class, 'createOrUpdate'])->name('community.createOrUpdate');
-    Route::post('/delete/{id}', [LandingCommunity::class, 'delete'])->name('community.delete');
 });
 
 Route::prefix('/admin')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 
-    Route::get('/community', [CommunityController::class, 'index'])->name('admin.community');
+    Route::prefix('community')->group(function () {
+        Route::get('/', [CommunityController::class, 'index'])->name('admin.community');
+        Route::post('/getDataById/{id}', [CommunityController::class, 'getDataById'])->name('admin.community.getDataById');
+        Route::post('/createOrUpdate', [CommunityController::class, 'createOrUpdate'])->name('admin.community.createOrUpdate');
+        Route::get('/delete/{id}', [CommunityController::class, 'delete'])->name('admin.community.delete');
+    });
 
     Route::prefix('news')->group(function () {
         Route::get('/', [NewsController::class, 'index'])->name('admin.news');

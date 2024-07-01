@@ -15,6 +15,7 @@
             </div>
 
             <div class="section-body">
+                <x_alert/>
                 <!-- Button to trigger Add Data Modal -->
                 <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addDataModal">
                     <i class="fa fa-plus"></i> Add Data
@@ -122,7 +123,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-danger">Delete</button>
+                                                    <a href="{{ route('admin.community.delete', $c['id']) }}" class="btn btn-danger">Delete</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,37 +149,38 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.community.createOrUpdate') }}">
+                            @csrf
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                <input name="name" type="text" class="form-control" id="name" placeholder="Enter name">
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="Enter description">
+                                <input name="description" type="text" class="form-control" id="description" placeholder="Enter description">
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="Enter address">
+                                <input type="text" class="form-control" id="address" placeholder="Enter address" name="address">
                             </div>
                             <div class="form-group">
                                 <label for="leader">Leader</label>
-                                <select class="form-control" id="leader">
+                                <select class="form-control" id="leader" name="leader">
                                     @foreach ($users as $u)
                                     <option value="{{$u['id']}}">{{$u['name']}}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="file">Image</label>
                                 <input type="file" class="form-control-file" id="file">
-                            </div>
-                        </form>
+                            </div> --}}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
