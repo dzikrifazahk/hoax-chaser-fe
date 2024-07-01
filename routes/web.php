@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingCommunity;
 use App\Http\Controllers\LandingReadMode;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 
@@ -31,21 +35,30 @@ Route::get('/read-mode', function () {
     return view('pages.landing.read-mode', []);
 })->name('readMode');
 Route::get('/check-by-ai', function () {
-    return view('pages.landing.check-by-ai', []);
+    return view('pages.landing.read-mode', []);
 })->name('checkByAI');
-Route::get('/community', function () {
-    return view('pages.landing.community', []);
-})->name('community');
-
-// Route::get('/read-mode', function () {
-//     return view('pages.landing.read-mode', []);
-// });
-// Route::get('/read-mode', [LandingReadMode::class, 'index'])->name('readMode');
-// Route::get('/check-by-ai', [CheckByAIController::class, 'index'])->name('checkByAI');
-// Route::get('/community', [CommunityController::class, 'index'])->name('community');
 
 
-Route::get('/anu', [TestController::class,'index']);
+Route::prefix('/community')->group(function () {
+    Route::get('/', [LandingCommunity::class, 'index'])->name('community');
+    Route::post('/getDataById/{id}', [LandingCommunity::class, 'getDataById'])->name('community.getDataById');
+    Route::post('/createOrUpdate', [LandingCommunity::class, 'createOrUpdate'])->name('community.createOrUpdate');
+    Route::post('/delete/{id}', [LandingCommunity::class, 'delete'])->name('community.delete');
+});
+
+Route::prefix('/admin')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::get('/community', [CommunityController::class, 'index'])->name('admin.community');
+
+    Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
+});
+
+Route::get('/read-modal', function () {
+    return view('template.bootstrap-modal', []);
+});
+
+Route::get('/anu', [TestController::class, 'index']);
 
 Route::get('/dashboard-ecommerce-dashboard', function () {
     return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
@@ -97,7 +110,7 @@ Route::get('/bootstrap-media-object', function () {
     return view('pages.bootstrap-media-object', ['type_menu' => 'bootstrap']);
 });
 Route::get('/bootstrap-modal', function () {
-    return view('pages.bootstrap-modal', ['type_menu' => 'bootstrap']);
+    return view('template.bootstrap-modal', ['type_menu' => 'bootstrap']);
 });
 Route::get('/bootstrap-nav', function () {
     return view('pages.bootstrap-nav', ['type_menu' => 'bootstrap']);

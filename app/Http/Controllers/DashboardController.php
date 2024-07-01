@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LandingCommunity extends Controller
+class DashboardController extends Controller
 {
-    function index()
+    function dashboard()
     {
         $data = [
-            'community' => getData('/community'),
+            'type_menu' => 'dashboard',
+            'total_news' => rand(100, 1000),
+            'total_hoax' => rand(100, 1000),
+            'total_actual' => rand(100, 1000),
+            'total_not_trained' => rand(100, 1000),
+            'history_url_request' => []
         ];
-
-        return view('pages.landing.community', $data);
+        return view('pages.admin.dashboard', $data);
     }
 
     function createOrUpdate(Request $request)
