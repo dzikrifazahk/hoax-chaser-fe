@@ -11,6 +11,11 @@
                 <a class="nav-link"
                     href="{{ url('admin/dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
             </li>
+
+            <li class="{{ Request::is('admin/community') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('admin.community') }}"><i class="fas fa-users"></i> <span>Community</span></a>
+            </li>
         </ul>
 
         

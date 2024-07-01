@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingCommunity;
 use App\Http\Controllers\LandingReadMode;
@@ -46,11 +47,13 @@ Route::prefix('/community')->group(function () {
 
 Route::prefix('/admin')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::get('/community', [CommunityController::class, 'index'])->name('admin.community');
 });
 
-// Route::get('/read-mode', function () {
-//     return view('pages.landing.read-mode', []);
-// });
+Route::get('/read-modal', function () {
+    return view('template.bootstrap-modal', []);
+});
 // Route::get('/read-mode', [LandingReadMode::class, 'index'])->name('readMode');
 // Route::get('/check-by-ai', [CheckByAIController::class, 'index'])->name('checkByAI');
 // Route::get('/community', [CommunityController::class, 'index'])->name('community');
