@@ -95,7 +95,7 @@
                         <div class="card-body">
                             <canvas id="myChart"
                                 height="182"></canvas>
-                            
+
                         </div>
                     </div>
 
@@ -118,7 +118,7 @@
                                             aria-valuemax="100"></div>
                                     </div>
                                 </div>
-    
+
                                 <div class="mb-4">
                                     <div class="text-small font-weight-bold text-muted float-right">1,880</div>
                                     <div class="font-weight-bold mb-1">Facebook</div>
@@ -132,7 +132,7 @@
                                             aria-valuemax="100"></div>
                                     </div>
                                 </div>
-    
+
                                 <div class="mb-4">
                                     <div class="text-small font-weight-bold text-muted float-right">1,521</div>
                                     <div class="font-weight-bold mb-1">Bing</div>
@@ -146,7 +146,7 @@
                                             aria-valuemax="100"></div>
                                     </div>
                                 </div>
-    
+
                                 <div class="mb-4">
                                     <div class="text-small font-weight-bold text-muted float-right">884</div>
                                     <div class="font-weight-bold mb-1">Yahoo</div>
@@ -160,7 +160,7 @@
                                             aria-valuemax="100"></div>
                                     </div>
                                 </div>
-    
+
                                 <div class="mb-4">
                                     <div class="text-small font-weight-bold text-muted float-right">473</div>
                                     <div class="font-weight-bold mb-1">Kodinger</div>
@@ -174,7 +174,7 @@
                                             aria-valuemax="100"></div>
                                     </div>
                                 </div>
-    
+
                                 <div class="mb-4">
                                     <div class="text-small font-weight-bold text-muted float-right">418</div>
                                     <div class="font-weight-bold mb-1">Multinity</div>
@@ -228,7 +228,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-12 col-12 col-sm-12">
@@ -377,7 +377,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>

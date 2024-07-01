@@ -16,6 +16,10 @@
                 <a class="nav-link"
                     href="{{ route('admin.community') }}"><i class="fas fa-users"></i> <span>Community</span></a>
             </li>
+            <li class="{{ Request::is('admin/news') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('admin.news') }}"><i class="fas fa-users"></i> <span>News</span></a>
+            </li>
         </ul>
 
 

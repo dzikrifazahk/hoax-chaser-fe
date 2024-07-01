@@ -4,6 +4,7 @@ use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingCommunity;
 use App\Http\Controllers\LandingReadMode;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 
@@ -49,15 +50,13 @@ Route::prefix('/admin')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('/community', [CommunityController::class, 'index'])->name('admin.community');
+
+    Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
 });
 
 Route::get('/read-modal', function () {
     return view('template.bootstrap-modal', []);
 });
-// Route::get('/read-mode', [LandingReadMode::class, 'index'])->name('readMode');
-// Route::get('/check-by-ai', [CheckByAIController::class, 'index'])->name('checkByAI');
-// Route::get('/community', [CommunityController::class, 'index'])->name('community');
-
 
 Route::get('/anu', [TestController::class, 'index']);
 
@@ -111,7 +110,7 @@ Route::get('/bootstrap-media-object', function () {
     return view('pages.bootstrap-media-object', ['type_menu' => 'bootstrap']);
 });
 Route::get('/bootstrap-modal', function () {
-    return view('pages.bootstrap-modal', ['type_menu' => 'bootstrap']);
+    return view('template.bootstrap-modal', ['type_menu' => 'bootstrap']);
 });
 Route::get('/bootstrap-nav', function () {
     return view('pages.bootstrap-nav', ['type_menu' => 'bootstrap']);
