@@ -46,7 +46,7 @@ Route::prefix('/community')->group(function () {
 });
 
 Route::prefix('/admin')->group(function () {
-    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('/community', [CommunityController::class, 'index'])->name('admin.community');
 });
