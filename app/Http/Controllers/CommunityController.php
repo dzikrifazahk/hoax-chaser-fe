@@ -10,6 +10,7 @@ class CommunityController extends Controller
     {
         $data = [
             'community' => getData('/community'),
+            'users' => getData('/users'),
         ];
 
         // dd($data['community']);
