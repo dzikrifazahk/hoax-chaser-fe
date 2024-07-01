@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LandingCommunity;
 use App\Http\Controllers\LandingReadMode;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
@@ -33,9 +34,13 @@ Route::get('/read-mode', function () {
 Route::get('/check-by-ai', function () {
     return view('pages.landing.read-mode', []);
 })->name('checkByAI');
-Route::get('/community', function () {
-    return view('pages.landing.community', []);
-})->name('community');
+
+
+Route::prefix('/community')->group(function () {
+    Route::get('/', [LandingCommunity::class, 'index'])->name('community');
+    Route::post('/getDataById/{id}', [LandingCommunity::class, 'getDataById'])->name('community.getDataById');
+    Route::post('/createOrUpdate', [LandingCommunity::class, 'createOrUpdate'])->name('community.createOrUpdate');
+});
 
 // Route::get('/read-mode', function () {
 //     return view('pages.landing.read-mode', []);
@@ -45,7 +50,7 @@ Route::get('/community', function () {
 // Route::get('/community', [CommunityController::class, 'index'])->name('community');
 
 
-Route::get('/anu', [TestController::class,'index']);
+Route::get('/anu', [TestController::class, 'index']);
 
 Route::get('/dashboard-ecommerce-dashboard', function () {
     return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
