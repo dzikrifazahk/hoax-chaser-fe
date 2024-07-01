@@ -23,7 +23,7 @@ Route::get('/dashboard-general-dashboard', function () {
 });
 
 Route::get('/', function () {
-    return view('pages.landing.index', []);
+    return view('pages.landing.home', []);
 });
 
 // Route::get('/read-mode', [LandingReadMode::class, 'index'])->name('readMode');
@@ -31,7 +31,7 @@ Route::get('/read-mode', function () {
     return view('pages.landing.read-mode', []);
 })->name('readMode');
 Route::get('/check-by-ai', function () {
-    return view('pages.landing.read-mode', []);
+    return view('pages.landing.check-by-ai', []);
 })->name('checkByAI');
 Route::get('/community', function () {
     return view('pages.landing.community', []);
