@@ -15,6 +15,7 @@
             </div>
 
             <div class="section-body">
+                <x_alert/>
                 <!-- Button to trigger Add Data Modal -->
                 <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addDataModal">
                     <i class="fa fa-plus"></i> Add Data
@@ -24,10 +25,19 @@
                     <table class="table table-striped">
                         <thead>
                             <th>No</th>
-                            <th>Name</th>
+                            <th>Title</th>
                             <th>Description</th>
-                            <th>Address</th>
-                            <th>Status</th>
+                            <th>Author</th>
+                            <th>Source</th>
+                            <th>Publish Date</th>
+                            <th>News Keywords</th>
+                            <th>Abigous Keywords</th>
+                            <th>Training Status</th>
+                            <th>Training Date</th>
+                            <th>Label</th>
+                            <th>Location</th>
+                            <th>Validated Date</th>
+                            <th>Url</th>
                             <th>Image</th>
                             <th>Action</th>
                         </thead>
@@ -35,19 +45,27 @@
                             @foreach ($news as $n)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $n['name'] }}</td>
+                                    <td>{{ $n['title'] }}</td>
                                     <td>{{ $n['description'] }}</td>
-                                    <td>{{ $n['address'] }}</td>
+                                    <td>{{ $n['author'] }}</td>
+                                    <td>{{ $n['source'] }}</td>
+                                    <td>{{ $n['publish_date'] }}</td>
+                                    <td>{{ $n['news_keywords'] }}</td>
+                                    <td>{{ $n['ambigous_keywords'] }}</td>
                                     <td>
-                                        @if ($n['status'] == 'ACTIVE')
-                                            <span class="badge badge-success">ACTIVE</span>
+                                        @if ($n['is_training'])
+                                            <span class="badge badge-success">TRUE</span>
                                         @else
-                                            <span class="badge badge-danger">INACTIVE</span>
+                                            <span class="badge badge-danger">FALSE</span>
                                         @endif
                                     </td>
-                                    <td class="p-2">
-                                        <img src="{{ env('APP_API_URL') . '/uploads/community/' . $n['file_name'] }}"
-                                            width="100" height="100" alt="">
+                                    <td>{{ $n['training_date'] }}</td>
+                                    <td>{{ $n['label'] }}</td>
+                                    <td>{{ $n['location'] }}</td>
+                                    <td>{{ $n['validated_date'] }}</td>
+                                    <td>{{ $n['url'] }}</td>
+                                    <td>
+                                        <img src="{{ env('APP_API_URL') . '/uploads/news/' . $n['file_name'] }}" alt="" width="100" height="100">
                                     </td>
                                     <td>
                                         <div class="row">
@@ -56,12 +74,12 @@
                                                     data-target="#editDataModal">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
+                                                
                                             </div>
                                             <div class="col-auto">
-                                                <button class="btn btn-danger" type="button" class="btn btn-primary"
-                                                    data-toggle="modal" data-target="#exampleModal">
+                                                <a href="{{route('admin.news.delete', $n['id'])}}" class="btn btn-danger">
                                                     <i class="fa fa-trash"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </td>
@@ -73,64 +91,45 @@
             </div>
         </section>
 
-        <x-modal id="exampleModal" title="Modal Title" buttonText="Save changes">
-            <p>Modal body text goes here.</p>
-        </x-modal>
-
         <x-modal id="addDataModal" title="Add Data" buttonText="Save changes">
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description" placeholder="Enter description">
-                </div>
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="Enter address">
-                </div>
-                <div class="form-group">
-                    <label for="leader">Leader</label>
-                    <select class="form-control" id="leader">
-                        <option value="ACTIVE">User 1</option>
-                        <option value="INACTIVE">User 2</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="file">Image</label>
-                    <input type="file" class="form-control-file" id="file">
-                </div>
-            </form>
+            <form class="form-group" method="POST" action="{{route('admin.news.createOrUpdate')}}">
+                <x-input name="title" title="Title"/>
+                <x-input name="description" title="Description"/>
+                <x-input name="aurhor" title="Aurhor"/>
+                <x-input name="source" title="Source"/>
+                <x-input-date name="publish_date" title="Publish Date"/>
+                <x-input name="news_keywords" title="News Keywords"/>
+                <x-input name="ambigous_keywords" title="Ambigous Keywords"/>
+                <x-input-option name="is_training" title="Is Training">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </x-input-option>
+                <x-input-date name="training_date" title="Training Date"/>
+                <x-input name="label" title="Label"/>
+                <x-input name="location" title="Location"/>
+                <x-input name="url" title="Url"/>
+                <x-input name="url_request_id" title="Url Request Id"/>
+            
         </x-modal>
 
         <x-modal id="editDataModal" title="Edit Data" buttonText="Save changes">
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description" placeholder="Enter description">
-                </div>
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="Enter address">
-                </div>
-                <div class="form-group">
-                    <label for="leader">Leader</label>
-                    <select class="form-control" id="leader">
-                        <option value="ACTIVE">User 1</option>
-                        <option value="INACTIVE">User 2</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="file">Image</label>
-                    <input type="file" class="form-control-file" id="file">
-                </div>
-            </form>
+            <form class="form-group" method="POST" action="{{route('admin.news.createOrUpdate')}}">
+                <x-input-value value="" name="title" title="Title"/>
+                <x-input-value value="" name="description" title="Description"/>
+                <x-input-value value="" name="aurhor" title="Aurhor"/>
+                <x-input-value value="" name="source" title="Source"/>
+                <x-input-date-value value="" name="publish_date" title="Publish Date"/>
+                <x-input-value value="" name="news_keywords" title="News Keywords"/>
+                <x-input-value value="" name="ambigous_keywords" title="Ambigous Keywords"/>
+                <x-input-option value="" name="is_training" title="Is Training">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </x-input-option>
+                <x-input-date-value value="" name="training_date" title="Training Date"/>
+                <x-input-value value="" name="label" title="Label"/>
+                <x-input-value value="" name="location" title="Location"/>
+                <x-input-value value="" name="url" title="Url"/>
+                <x-input-value value="" name="url_request_id" title="Url Request Id"/>
         </x-modal>
     </div>
 @endsection

@@ -10,11 +10,13 @@
             </div>
             <div class="modal-body">
                 {{ $slot }}
+                @csrf
             </div>
             <div class="modal-footer bg-whitesmoke br">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">{{ $buttonText }}</button>
+                <button type="submit" class="btn btn-primary">{{ $buttonText }}</button>
             </div>
+        </form>
         </div>
     </div>
 </div>
