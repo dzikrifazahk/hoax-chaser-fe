@@ -9,7 +9,7 @@ class NewsController extends Controller
     function index()
     {
         $data = [
-            'news' => getData('/community'),
+            'news' => getData('/news/getAll'),
         ];
 
         return view('pages.admin.news', $data);
@@ -17,27 +17,22 @@ class NewsController extends Controller
 
     function createOrUpdate(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-
         $body = [
-            'name' => $request->name,
+            'title' => $request->title,
             'description' => $request->description,
-            'address' => $request->address,
+            'author' => $request->author,
+            'source' => $request->source,
+            'publishDate' => $request->publish_date,
+            'newsKeywords' => $request->news_keywords,
+            'ambigousKeywords' => $request->ambigous_keywords,
+            'isTraining' => $request->is_training,
+            'label' => $request->label,
+            'location' => $request->location,
+            'url' => $request->url,
+            'urlRequestId' => $request->url_request_id,
         ];
 
-        if ($request->id) {
-            $body['id'] = $request->id;
-        }
-        if ($request->file) {
-            $body['file'] = $request->file;
-        }
-        if ($request->leader) {
-            $body['leader'] = $request->leader;
-        }
-
-        $response = postData('/community/createOrUpdate', $body);
+        $response = postData('/news/createOrUpdate', $body);
 
         if ($response) {
             return redirect()->back()->with('success', 'Community has been created');
@@ -59,7 +54,7 @@ class NewsController extends Controller
 
     function delete($id)
     {
-        $response = getData('/community/' . $id);
+        $response = deleteData('/news/' . $id);
 
         if ($response) {
             return redirect()->back()->with('success', 'Data has been retrieved');

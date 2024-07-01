@@ -51,7 +51,12 @@ Route::prefix('/admin')->group(function () {
 
     Route::get('/community', [CommunityController::class, 'index'])->name('admin.community');
 
-    Route::get('/news', [NewsController::class, 'index'])->name('admin.news');
+    Route::prefix('news')->group(function () {
+        Route::get('/', [NewsController::class, 'index'])->name('admin.news');
+        Route::post('/create', [NewsController::class, 'createOrUpdate'])->name('admin.news.createOrUpdate');
+        Route::get('/{id}', [NewsController::class, 'getDataById'])->name('admin.news.getDataById');
+        Route::get('/delete/{id}', [NewsController::class, 'delete'])->name('admin.news.delete');
+    });
 });
 
 Route::get('/read-modal', function () {
