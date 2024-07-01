@@ -1,7 +1,7 @@
 @extends('pages.landing.index')
 @section('content')
     <div class="h-full w-full flex bg-[#E5EEF7]">
-        <div class="flex flex-col w-4/5">
+        <div class="flex flex-col w-4/5 bg-white">
             {{-- header --}}
             <div class="flex p-5 w-full">
                 <div class="w-full bg-gradient-to-r from-red-500 p-2">
@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="p-10 flex flex-col">
+            <div class="p-10 flex flex-col gap-5">
                 <div class="flex gap-7">
                     <div class="font-thin text-[#FA3454]">
                         Politics
@@ -33,10 +33,138 @@
                     </div>
                     <p class="font-thin text-base flex">1,092</p>
                 </div>
+                <div class="w-1/4 bg-[#FA3454] rounded-2xl flex items-center justify-center p-2 text-white font-bold">
+                    Read
+                </div>
+
+                <div class="w-full h-full bg-[#FA3454] p-2 rounded-2xl">
+                    <p class="text-white text-2xl font-bold">Hoax Chaser Banner</p>
+                    <hr>
+                    <div class="flex w-full h-full gap-5">
+                        <div class="w-full p-4 text-white">
+                            <p>Temukan kepuasan dalam mengungkap kebenaran dan melindungi masyarakat dari penipuan dan disinformasi! Bergabunglah dengan tim kami di Hoax Chaser untuk menjadi bagian dari perubahan positif dalam memerangi hoaks. Dengan semangat kolaboratif dan dedikasi untuk kebenaran, kami mencari individu yang ingin bergabung dengan kami dalam misi mengungkap dan mengatasi tantangan digital yang kompleks. Jadilah bagian dari pergerakan ini, bergabunglah dengan Hoax Chaser sekarang!</p>
+                        </div>
+                        <div class="w-1/2 flex items-center justify-center">
+                            <img src="img/banner.png" class="bg-cover" alt="banner">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="w-full">
-            ini 2
+        <div class="w-full h-full p-10">
+            <div class="flex flex-wrap max-w-[50vw] max-h-full h-full overflow-hidden">
+                <!-- Card 1 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+                    <div class="bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="img/helping-people.png" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Helping People</h5>
+                            </a>
+                            <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">
+                                Empower users with the knowledge and skills to identify and counter hoaxes, so they
+                                can become active contributors in the fight against the spread of false information
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+                    <div class="bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="img/helping-people.png" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Helping People</h5>
+                            </a>
+                            <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">
+                                Empower users with the knowledge and skills to identify and counter hoaxes, so they
+                                can become active contributors in the fight against the spread of false information
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+                    <div class="bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="img/helping-people.png" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Helping People</h5>
+                            </a>
+                            <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">
+                                Empower users with the knowledge and skills to identify and counter hoaxes, so they
+                                can become active contributors in the fight against the spread of false information
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+                    <div class="bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="img/helping-people.png" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Helping People</h5>
+                            </a>
+                            <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">
+                                Empower users with the knowledge and skills to identify and counter hoaxes, so they
+                                can become active contributors in the fight against the spread of false information
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+                    <div class="bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="img/helping-people.png" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Helping People</h5>
+                            </a>
+                            <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">
+                                Empower users with the knowledge and skills to identify and counter hoaxes, so they
+                                can become active contributors in the fight against the spread of false information
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+                    <div class="bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="img/helping-people.png" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Helping People</h5>
+                            </a>
+                            <p class="mb-3 text-sm text-gray-700 dark:text-gray-400">
+                                Empower users with the knowledge and skills to identify and counter hoaxes, so they
+                                can become active contributors in the fight against the spread of false information
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
         </div>
+
+
     </div>
 @endsection

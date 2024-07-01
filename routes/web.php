@@ -35,7 +35,7 @@ Route::get('/read-mode', function () {
     return view('pages.landing.read-mode', []);
 })->name('readMode');
 Route::get('/check-by-ai', function () {
-    return view('pages.landing.read-mode', []);
+    return view('pages.landing.check-by-ai', []);
 })->name('checkByAI');
 
 
