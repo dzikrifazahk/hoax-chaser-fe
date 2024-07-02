@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DebunkingController;
 use App\Http\Controllers\LandingCommunity;
 use App\Http\Controllers\LandingReadMode;
 use App\Http\Controllers\NewsController;
@@ -58,6 +59,14 @@ Route::prefix('/admin')->group(function () {
         Route::post('/create', [NewsController::class, 'createOrUpdate'])->name('admin.news.createOrUpdate');
         Route::get('/{id}', [NewsController::class, 'getDataById'])->name('admin.news.getDataById');
         Route::get('/delete/{id}', [NewsController::class, 'delete'])->name('admin.news.delete');
+    });
+
+    Route::prefix('debunking')->group(function () {
+        Route::get('/', [DebunkingController::class, 'index'])->name('admin.debunking');
+        Route::get('/detail/{id}', [DebunkingController::class, 'detail'])->name('admin.debunking.detail');
+        Route::post('/create', [DebunkingController::class, 'createOrUpdate'])->name('admin.debunking.createOrUpdate');
+        Route::get('/{id}', [DebunkingController::class, 'getDataById'])->name('admin.debunking.getDataById');
+        Route::get('/delete/{id}', [DebunkingController::class, 'delete'])->name('admin.debunking.delete');
     });
 });
 
