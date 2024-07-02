@@ -102,12 +102,12 @@
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Referral URL</h4>
+                                <h4>Source</h4>
                             </div>
                             <div class="card-body">
                                 <div class="mb-4">
-                                    <div class="text-small font-weight-bold text-muted float-right">2,100</div>
-                                    <div class="font-weight-bold mb-1">Google</div>
+                                    <div class="text-small font-weight-bold text-muted float-right">{{$source_liputan6}}</div>
+                                    <div class="font-weight-bold mb-1">Liputan6</div>
                                     <div class="progress"
                                         data-height="3">
                                         <div class="progress-bar"
@@ -120,8 +120,8 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <div class="text-small font-weight-bold text-muted float-right">1,880</div>
-                                    <div class="font-weight-bold mb-1">Facebook</div>
+                                    <div class="text-small font-weight-bold text-muted float-right">{{$source_kominfo}}</div>
+                                    <div class="font-weight-bold mb-1">Kominfo</div>
                                     <div class="progress"
                                         data-height="3">
                                         <div class="progress-bar"
@@ -134,8 +134,8 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <div class="text-small font-weight-bold text-muted float-right">1,521</div>
-                                    <div class="font-weight-bold mb-1">Bing</div>
+                                    <div class="text-small font-weight-bold text-muted float-right">{{$source_cnn}}</div>
+                                    <div class="font-weight-bold mb-1">CNN</div>
                                     <div class="progress"
                                         data-height="3">
                                         <div class="progress-bar"
@@ -148,8 +148,8 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <div class="text-small font-weight-bold text-muted float-right">884</div>
-                                    <div class="font-weight-bold mb-1">Yahoo</div>
+                                    <div class="text-small font-weight-bold text-muted float-right">{{$source_kompas}}</div>
+                                    <div class="font-weight-bold mb-1">Kompas</div>
                                     <div class="progress"
                                         data-height="3">
                                         <div class="progress-bar"
@@ -162,8 +162,8 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <div class="text-small font-weight-bold text-muted float-right">473</div>
-                                    <div class="font-weight-bold mb-1">Kodinger</div>
+                                    <div class="text-small font-weight-bold text-muted float-right">{{$source_narasi}}</div>
+                                    <div class="font-weight-bold mb-1">Narasi</div>
                                     <div class="progress"
                                         data-height="3">
                                         <div class="progress-bar"
@@ -176,8 +176,8 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <div class="text-small font-weight-bold text-muted float-right">418</div>
-                                    <div class="font-weight-bold mb-1">Multinity</div>
+                                    <div class="text-small font-weight-bold text-muted float-right">{{$source_detik}}</div>
+                                    <div class="font-weight-bold mb-1">Detik</div>
                                     <div class="progress"
                                         data-height="3">
                                         <div class="progress-bar"
@@ -190,7 +190,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        {{-- <div class="card">
                             <div class="card-header">
                                 <h4>Popular Browser</h4>
                             </div>
@@ -227,7 +227,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
@@ -294,67 +294,32 @@
 
                     <div class="col-lg-12 col-md-12 col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>This Week Stats</h4>
-                                <div class="card-header-action">
-                                    <div class="dropdown">
-                                        <a href="#"
-                                            class="dropdown-toggle btn btn-primary"
-                                            data-toggle="dropdown">Filter</a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="#"
-                                                class="dropdown-item has-icon"><i class="far fa-circle"></i> Electronic</a>
-                                            <a href="#"
-                                                class="dropdown-item has-icon"><i class="far fa-circle"></i> T-shirt</a>
-                                            <a href="#"
-                                                class="dropdown-item has-icon"><i class="far fa-circle"></i> Hat</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="#"
-                                                class="dropdown-item">View All</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="card-body">
                                 <div class="summary">
-                                    <div class="summary-info">
-                                        <h4>$1,053</h4>
-                                        <div class="text-muted">Sold 3 items on 2 customers</div>
-                                        <div class="d-block mt-2">
-                                            <a href="#">View All</a>
-                                        </div>
-                                    </div>
                                     <div class="summary-item">
-                                        <h6>Item List <span class="text-muted">(3 Items)</span></h6>
+                                        <h5 class="text-primary">Trusted Sources</h5>
                                         <ul class="list-unstyled list-unstyled-border">
                                             <li class="media">
                                                 <a href="#">
                                                     <img class="mr-3 rounded"
                                                         width="50"
-                                                        src="{{ asset('img/products/product-1-50.png') }}"
+                                                        src="{{ asset('img/products/product-3-50.png') }}"
                                                         alt="product">
                                                 </a>
                                                 <div class="media-body">
-                                                    <div class="media-right">$405</div>
-                                                    <div class="media-title"><a href="#">PlayStation 9</a></div>
-                                                    <div class="text-muted text-small">by <a href="#">Hasan Basri</a>
-                                                        <div class="bullet"></div> Sunday
-                                                    </div>
+                                                    <div class="media-title"><a href="#">liputan6.com</a></div>
                                                 </div>
                                             </li>
+                                            
                                             <li class="media">
                                                 <a href="#">
                                                     <img class="mr-3 rounded"
                                                         width="50"
-                                                        src="{{ asset('img/products/product-2-50.png') }}"
+                                                        src="{{ asset('img/products/product-3-50.png') }}"
                                                         alt="product">
                                                 </a>
                                                 <div class="media-body">
-                                                    <div class="media-right">$499</div>
-                                                    <div class="media-title"><a href="#">RocketZ</a></div>
-                                                    <div class="text-muted text-small">by <a href="#">Hasan Basri</a>
-                                                        <div class="bullet"></div> Sunday
-                                                    </div>
+                                                    <div class="media-title"><a href="#">cekfakta.com</a></div>
                                                 </div>
                                             </li>
                                             <li class="media">
@@ -365,11 +330,40 @@
                                                         alt="product">
                                                 </a>
                                                 <div class="media-body">
-                                                    <div class="media-right">$149</div>
-                                                    <div class="media-title"><a href="#">Xiaomay Readme 4.0</a></div>
-                                                    <div class="text-muted text-small">by <a href="#">Kusnaedi</a>
-                                                        <div class="bullet"></div> Tuesday
-                                                    </div>
+                                                    <div class="media-title"><a href="#">kominfo.go.id</a></div>
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#">
+                                                    <img class="mr-3 rounded"
+                                                        width="50"
+                                                        src="{{ asset('img/products/product-3-50.png') }}"
+                                                        alt="product">
+                                                </a>
+                                                <div class="media-body">
+                                                    <div class="media-title"><a href="#">kompas.com</a></div>
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#">
+                                                    <img class="mr-3 rounded"
+                                                        width="50"
+                                                        src="{{ asset('img/products/product-3-50.png') }}"
+                                                        alt="product">
+                                                </a>
+                                                <div class="media-body">
+                                                    <div class="media-title"><a href="#">cnnindonesia.com</a></div>
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <a href="#">
+                                                    <img class="mr-3 rounded"
+                                                        width="50"
+                                                        src="{{ asset('img/products/product-3-50.png') }}"
+                                                        alt="product">
+                                                </a>
+                                                <div class="media-body">
+                                                    <div class="media-title"><a href="#">narasi.tv</a></div>
                                                 </div>
                                             </li>
                                         </ul>

@@ -4,18 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CommunityController extends Controller
+class DebunkingController extends Controller
 {
     function index()
     {
         $data = [
-            'community' => getData('/community'),
+            'debunking' => getData('/debunking'),
             'users' => getData('/users'),
         ];
 
-        // dd($data['community']);
+        // dd($data['debunking']);
+        return view('pages.admin.debunking', $data);
+    }
 
-        return view('pages.admin.community', $data);
+    function detail($id)
+    {
+        $data = [
+            'debunking' => getData('/debunking/getById?idDebunking=' . $id),
+        ];
+
+        // dd($data);
+        return view('pages.admin.detail-debunking', $data);
     }
 
     function createOrUpdate(Request $request)
@@ -38,18 +47,18 @@ class CommunityController extends Controller
         //     $body['file'] = $request->file;
         // }
 
-        $response = postData('/community/createOrUpdate', $body);
+        $response = postData('/debunking/createOrUpdate', $body);
 
         if ($response) {
-            return redirect()->back()->with('success', 'Community has been created');
+            return redirect()->back()->with('success', 'debunking has been created');
         } else {
-            return redirect()->back()->with('error', 'Community has not been created');
+            return redirect()->back()->with('error', 'debunking has not been created');
         }
     }
 
     function getDataById($id)
     {
-        $response = getData('/community/' . $id);
+        $response = getData('/debunking/' . $id);
 
         if ($response) {
             return redirect()->back()->with('success', 'Data has been retrieved');
@@ -60,7 +69,7 @@ class CommunityController extends Controller
 
     function delete($id)
     {
-        $response = deleteData('/community/' . $id);
+        $response = deleteData('/debunking/' . $id);
 
         if ($response) {
             return redirect()->back()->with('success', 'Data has been retrieved');

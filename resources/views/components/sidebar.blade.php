@@ -20,6 +20,26 @@
                 <a class="nav-link"
                     href="{{ route('admin.news') }}"><i class="fa-regular fa-newspaper"></i><span>News</span></a>
             </li>
+            <li class="{{ Request::is('admin/debunking*') ? 'active' : '' }}">
+                <a class="nav-link"
+                    href="{{ route('admin.debunking') }}"><i class="fa-regular fa-check-circle"></i><span>Debunking</span></a>
+            </li>
+            <li class="">
+                <a class="nav-link"
+                    href="{{ route('admin.news') }}"><i class="fa fa-graduation-cap"></i><span>Education Events</span></a>
+            </li>
+            <li class="">
+                <a class="nav-link"
+                    href="{{ route('admin.news') }}"><i class="fa fa-certificate"></i><span>Trusted Source</span></a>
+            </li>
+            <li class="">
+                <a class="nav-link"
+                    href="{{ route('admin.news') }}"><i class="fa fa-globe"></i><span>Url Request</span></a>
+            </li>
+            <li class="">
+                <a class="nav-link"
+                    href="{{ route('admin.news') }}"><i class="fa fa-user-plus"></i><span>Users</span></a>
+            </li>
         </ul>
 
 

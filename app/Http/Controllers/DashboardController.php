@@ -14,7 +14,13 @@ class DashboardController extends Controller
             'total_hoax' => rand(100, 1000),
             'total_actual' => rand(100, 1000),
             'total_not_trained' => rand(100, 1000),
-            'history_url_request' => []
+            'history_url_request' => [],
+            'source_liputan6' => rand(600, 1000),
+            'source_kominfo' => rand(500, 1000),
+            'source_cnn' => rand(400, 1000),
+            'source_detik' => rand(300, 1000),
+            'source_narasi' => rand(200, 1000),
+            'source_kompas' => rand(100, 1000),
         ];
         return view('pages.admin.dashboard', $data);
     }
